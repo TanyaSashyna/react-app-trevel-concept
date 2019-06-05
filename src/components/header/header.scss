@@ -39,7 +39,7 @@ header .logo img {
   background: #31a7b4;
 }
 
-.burger .menu-icon {
+.burger.menu-off .menu-icon {
   position: absolute;
   top: 50%;
   right: 5px;
@@ -51,7 +51,7 @@ header .logo img {
   transition: 0.35s ease;
 }
 
-.burger .menu-icon:before {
+.burger.menu-off .menu-icon:before {
   content: "";
   display: block;
   position: absolute;
@@ -63,7 +63,7 @@ header .logo img {
   transition: 0.35s ease;
 }
 
-.burger .menu-icon:after {
+.burger.menu-off .menu-icon:after {
   content: "";
   display: block;
   position: absolute;
