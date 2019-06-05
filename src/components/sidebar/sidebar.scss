@@ -1,0 +1,114 @@
+@import "../../variables";
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  width: 100%;
+  padding-top: 71px;
+  color: #fff;
+  background: #3ab1bf;
+  border-right: 1px solid #25818c;
+  box-shadow: 0 0 5px rgb(51, 125, 133);
+  transform: translate(-100%);
+  transition: transform 0.35s ease;
+}
+
+.sidebar.open {
+  transform: translate(0);
+}
+
+.user-info {
+  text-align: center;
+  padding: 10px 20px;
+  background: #2397a5;
+  border-bottom: 1px solid #25818c;
+  border-top: 1px solid #25818c;
+}
+
+.user-info .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 auto;
+  /*background-image: url("../img/profile.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;*/
+}
+
+.user-info p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.nav-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.nav-list ul {
+  list-style: none;
+}
+
+.nav-list .link span,
+.nav-list .link a {
+  display: block;
+  padding: 15px 20px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.nav-list .link a {
+  transition: 0.35s ease;
+}
+
+.nav-list .link a:hover {
+  background: #31a7b4;
+}
+
+.nav-list .link:not(:last-child) {
+  border-bottom: 1px solid #25818c;
+}
+
+.nav-list .link .submenu {
+  padding-bottom: 10px;
+}
+
+.nav-list .link .submenu li {
+  position: relative;
+}
+
+.nav-list .link .submenu li:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 25px;
+  margin: auto;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.nav-list .link .submenu li a {
+  padding: 7px 20px 7px 40px;
+}
+
+.logout-block {
+  padding: 10px 20px;
+  border-top: 1px solid #25818c;
+}
+
+.logout-block .btn-logout {
+  width: 30px;
+  cursor: pointer;
+}
