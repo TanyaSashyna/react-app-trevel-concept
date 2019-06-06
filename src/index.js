@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from "react-router-dom";
 
 import "./style.scss";
 
+import Header from './components/header/Header';
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <App />,
+    <BrowserRouter>
+        <Header />
+        <App />
+    </BrowserRouter>,
     document.getElementById('root')
 );
 

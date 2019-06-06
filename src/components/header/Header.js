@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 import "./header.scss";
 
@@ -7,8 +8,8 @@ import Button from '../button/Button';
 import ImgComponent from '../imgComponent/ImgComponent';
 
 const menuSm = [
-    {id: 1, href: "/profile", className: "profile icon", src: "img/profile.svg", alt: "profile"},
-    {id: 2, href: "/settings", className: "settings icon", src: "img/settings.svg", alt: "settings"}
+    { id: 1, path: "/profile", className: "profile icon", src: "img/profile.svg", alt: "profile"},
+    { id: 2, path: "/settings", className: "settings icon", src: "img/settings.svg", alt: "settings"}
 ];
 
 export default class Header extends React.Component {
@@ -34,32 +35,32 @@ export default class Header extends React.Component {
         return(
             <>
                 <header>
-                <nav>
-                    <Button
-                        type="button"
-                        className='burger menu-off'
-                        // classNameShow={this.state.showSidebar ? 'menu-on' : 'menu-off'}
-                        id='burger'
-                        onClick={this.showSidebar}
-                        classNameIcon='menu-icon'/>
+                    <nav>
+                        <Button
+                            type="button"
+                            className='burger menu-off'
+                            // classNameShow={this.state.showSidebar ? 'menu-on' : 'menu-off'}
+                            id='burger'
+                            onClick={this.showSidebar}
+                            classNameIcon='menu-icon'/>
 
-                    <a href="/" className="logo">
-                        <ImgComponent src="img/logo.svg" alt='logo'/>
-                        <span>Travel</span>
-                    </a>
-                    <ul className="menu-sm">
-                        {
-                            menuSm.map(el =>
-                                <li key={el.id}>
-                                    <a href={el.href} className={el.className}>
-                                        <ImgComponent src={el.src} alt={el.alt} />
-                                    </a>
-                                </li>
-                            )
-                        }
-                    </ul>
-                </nav>
-            </header>
+                        <Link to="/" className="logo">
+                            <ImgComponent src="img/logo.svg" alt='logo'/>
+                            <span>Travel</span>
+                        </Link>
+                        <ul className="menu-sm">
+                            {
+                                menuSm.map(el =>
+                                    <li key={el.id}>
+                                        <Link to={el.path} className={el.className}>
+                                            <ImgComponent src={el.src} alt={el.alt} />
+                                        </Link>
+                                    </li>
+                                )
+                            }
+                        </ul>
+                    </nav>
+                </header>
                 <Sidebar className={this.state.showSidebar ? 'open' : 'close'}/>
             </>
         )

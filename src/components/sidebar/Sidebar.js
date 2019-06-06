@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 import "./sidebar.scss";
 
@@ -14,30 +15,30 @@ export default class Sidebar extends React.Component {
                 <div className="nav-list">
                     <ul>
                         <li className="link">
-                            <a href="/profile" className="profile">Профиль</a>
+                            <Link to="/profile" className="profile">Профиль</Link>
                         </li>
                         <li className="link">
                             <span>Пассажирские перевозки</span>
                             <ul className="submenu">
                                 <li>
-                                    <a href="/">Такси</a>
+                                    <Link to="/taxi">Такси</Link>
                                 </li>
                                 <li>
-                                    <a href="/transfer" id="intercity">Междугородние</a>
+                                    <Link to="/transfer" id="intercity">Междугородние</Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="link">
-                            <a href="/">История</a>
+                            <Link to="/history">История</Link>
                         </li>
                         <li className="link">
-                            <a href="/">Скидки</a>
+                            <Link to="/sale">Скидки</Link>
                         </li>
                         <li className="link">
-                            <a href="/settings" className="settings">Настройки</a>
+                            <Link to="/settings" className="settings">Настройки</Link>
                         </li>
                         <li className="link">
-                            <a href="/">Контакты</a>
+                            <Link to="/contact">Контакты</Link>
                         </li>
                     </ul>
                 </div>
