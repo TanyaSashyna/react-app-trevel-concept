@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./header.scss";
 
-import Sidebar from '../sidebar/Sidebar';
+
 import Button from '../button/Button';
 import ImgComponent from '../imgComponent/ImgComponent';
 
@@ -13,25 +13,12 @@ const menuSm = [
 ];
 
 export default class Header extends React.Component {
-    constructor(props){
-        super(props);
-
-        this.state = {showSidebar: false};
-
-        this.showSidebar = this.showSidebar.bind(this);
-    }
-
-    shouldComponentUpdate(nextProps, nextState, nextContext){
-        // this the cicle for me for check
-        nextState.showSidebar ? console.log('I am true') : console.log('I am false');
-        return true;
-    }
-
     showSidebar(e){
         this.setState({showSidebar: !this.state.showSidebar})
     }
 
     render(){
+        console.log(this.props);
         return(
             <>
                 <header>
@@ -39,9 +26,8 @@ export default class Header extends React.Component {
                         <Button
                             type="button"
                             className='burger menu-off'
-                            // classNameShow={this.state.showSidebar ? 'menu-on' : 'menu-off'}
                             id='burger'
-                            onClick={this.showSidebar}
+                            onClick={this.props.onClick}
                             classNameIcon='menu-icon'/>
 
                         <Link to="/" className="logo">
@@ -61,7 +47,6 @@ export default class Header extends React.Component {
                         </ul>
                     </nav>
                 </header>
-                <Sidebar className={this.state.showSidebar ? 'open' : 'close'}/>
             </>
         )
     }

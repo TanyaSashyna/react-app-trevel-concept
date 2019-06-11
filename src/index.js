@@ -4,14 +4,14 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./style.scss";
 
-import Header from './components/header/Header';
+import NavAll from './components/navAll/NavAll';
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <BrowserRouter>
-        <Header />
+        <NavAll />
         <App />
     </BrowserRouter>,
     document.getElementById('root')
