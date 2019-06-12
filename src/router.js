@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Main from './components/main/Main';
+import Count from "./containers/Count";
 import Caption from './components/caption/Caption';
 
 export default class App extends React.Component {
@@ -9,6 +10,7 @@ export default class App extends React.Component {
     return (
         <>
             <Switch>
+                <Route exact path="/counter" component={Count} />
                 <Route exact path="/" component={Main} />
                 <Route
                     path="/profile"

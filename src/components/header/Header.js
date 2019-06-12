@@ -34,6 +34,7 @@ export default class Header extends React.Component {
                             <ImgComponent src="img/logo.svg" alt='logo'/>
                             <span>Travel</span>
                         </Link>
+                        <Link to="/counter">counter</Link>
                         <ul className="menu-sm">
                             {
                                 menuSm.map(el =>
