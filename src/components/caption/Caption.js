@@ -4,6 +4,7 @@ import "./caption.scss";
 
 import ImgComponent from '../imgComponent/ImgComponent';
 import SelectsBlock from '../selects-block/SelectsBlock';
+import AboutWay from '../aboutWay/AboutWay';
 
 export default class Caption extends React.Component {
 	constructor(props){
@@ -66,6 +67,7 @@ export default class Caption extends React.Component {
 						onChange={this.handleSelectChange.bind(this)}
 					/>
 				</div>
+				<AboutWay/>
             </div>
         )
     }
