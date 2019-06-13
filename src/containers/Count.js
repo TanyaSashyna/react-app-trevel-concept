@@ -9,7 +9,7 @@ export class Count extends Component {
     render() {
         const { counter, decrease, increase } = this.props;
         return (
-            <div>
+            <div className="main">
                 <h1>Counter {counter}</h1>
                 <button className="btn-action" onClick={increase}>+</button>
                 <button className="btn-action" onClick={decrease}>-</button>

@@ -5,6 +5,7 @@ import "./caption.scss";
 import ImgComponent from '../imgComponent/ImgComponent';
 import SelectsBlock from '../selects-block/SelectsBlock';
 import AboutWay from '../aboutWay/AboutWay';
+import FormOrder from '../formOrder/FormOrder';
 
 export default class Caption extends React.Component {
 	constructor(props){
@@ -37,7 +38,7 @@ export default class Caption extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="main">
 				<div className='from-to'>
 					<div className="caption-wrap">
 						<h2 className="caption">Пассажирские перевозки</h2>
@@ -49,25 +50,26 @@ export default class Caption extends React.Component {
 					<div className="caption-img">
 						<ImgComponent src="https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704_960_720.jpg"/>
 					</div>
-				</div>
-				<div>
-					<label>{this.state.fromWhere[this.state.valueOne]}</label>
+                </div>
+                <div className="select-wrap">
 					<SelectsBlock
 						name="from-where"
 						value={this.state.valueOne}
 						fromWhere={this.state.fromWhere}
-						onChange={this.handleSelectChange.bind(this)}
+                        onChange={this.handleSelectChange.bind(this)}
+                        text="Откуда"
 					/>
-					<label>{this.state.fromWhere[this.state.valueTwo]}</label>
 					<SelectsBlock
 						className={ this.state.showSelect ? 'd-block' : 'd-none' }
 						name="where"
 						value={this.state.valueTwo}
 						fromWhere={this.state.fromWhere}
-						onChange={this.handleSelectChange.bind(this)}
+                        onChange={this.handleSelectChange.bind(this)}
+                        text="Куда"
 					/>
 				</div>
-				<AboutWay/>
+                <AboutWay />
+                <FormOrder />
             </div>
         )
     }

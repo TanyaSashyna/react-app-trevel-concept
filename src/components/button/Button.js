@@ -1,5 +1,7 @@
 import React from 'react';
 
+import "./button.scss";
+
 export default class Button extends React.Component {
     render(){
         const { text = false, type, className, id, onClick, classNameIcon } = this.props;
