@@ -31,7 +31,7 @@ export default class Header extends React.Component {
                             classNameIcon='menu-icon'/>
 
                         <Link to="/" className="logo">
-                            <ImgComponent src="img/logo.svg" alt='logo'/>
+                            <ImgComponent src="../../img/logo.svg" alt='logo'/>
                             <span>Travel</span>
                         </Link>
                         <Link to="/counter">counter</Link>

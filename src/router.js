@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Main from './components/main/Main';
 import Count from "./containers/Count";
-import Caption from './components/caption/Caption';
+import Intercity from './components/intercity/Intercity';
 import UserProfile from './components/userProfile/UserProfile';
 import SettingPage from './components/settingPage/SettingPage';
 
@@ -16,7 +16,7 @@ export default class App extends React.Component {
                 <Route exact path="/" component={Main} />
                 <Route path="/profile" component={UserProfile} />
                 <Route path="/settings" component={SettingPage} />
-                <Route path="/transfer" component={Caption} />
+                <Route path="/transfer" component={Intercity} />
                 <Route
                     path="/taxi"
                     render={props => <div className="main"><h1>Taxi Page</h1></div>}

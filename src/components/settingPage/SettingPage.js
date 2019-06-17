@@ -2,40 +2,58 @@ import React from 'react';
 
 import "./setting-page.scss";
 
+import Input from '../input/Input';
+import ErrorMessage from '../errorMessage/ErrorMessage';
+import Button from '../button/Button';
+
 export default class SettingPage extends React.Component {
+    onChangeValue(e) {
+        console.log(e.target.value)
+    }
+
+    saveOrderForm(e) {
+        console.log('saveOrderForm')
+    }
+
     render() {
         return (
             <div className="main">
                 <form>
-                    <div class="user-avatar">
-                        <label for="avatarFile" class="avatar" id="avatar-img"></label>
-                        <input type="file" name="avatar" id="avatarFile" class="input-avatar" />
+                    <div className="user-avatar">
+                        <label htmlFor="avatarFile" className="avatar" id="avatar-img"></label>
+                        <input type="file" name="avatar" id="avatarFile" className="input-avatar"/>
                     </div>
-                    <form class="info">
-                        <div class="form-group">
+                    <div className="info">
+                        <div className="form-group">
                             <label className="label-input">Имя:</label>
-                            <input type="text" name="firstName" placeholder="Имя" />
-                            <span class="error">Введите имя</span>
+                            <Input type="text" name="firstName" placeholder="Имя" onChange={this.onChangeValue}/>
+                            <ErrorMessage text='Введите имя'/>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label className="label-input">Фамилия:</label>
-                            <input type="text" name="lastName" placeholder="Фамилия" />
-                            <span class="error">Введите Фамилию</span>
+                            <Input type="text" name="lastName" placeholder="Фамилия" onChange={this.onChangeValue}/>
+                            <ErrorMessage text='Введите Фамилию' />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label className="label-input">Телефона:</label>
-                            <input type="phone" name="phone" placeholder="Телефон" />
-                            <span class="error">Введите номер телефона</span>
+                            <Input type="phone" name="phone" placeholder="Телефон" onChange={this.onChangeValue}/>
+                            <ErrorMessage text='Введите номер телефона' />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label className="label-input">Город:</label>
-                            <input type="text" name="city" placeholder="Город" />
-                            <span class="error">Введите город</span>
+                            <Input type="text" name="city" placeholder="Город" onChange={this.onChangeValue}/>
+                            <ErrorMessage text='Введите город' />
                         </div>
-                        <div class="btn-block">
-                            <button type="button" class="btn" id="save">Сохранить</button>
+                        <div className="btn-block">
+                            <Button
+                                text="Сохранить"
+                                type="button"
+                                className="btn"
+                                id="save"
+                                onClick={this.saveOrderForm}
+                            />
                         </div>
-                    </form>
+                    </div>
                 </form>
             </div>
         )

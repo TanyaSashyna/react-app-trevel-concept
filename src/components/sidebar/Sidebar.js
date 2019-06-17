@@ -3,7 +3,14 @@ import { Link } from "react-router-dom";
 
 import "./sidebar.scss";
 
+//import ImgComponent from '../imgComponent/ImgComponent';
+import Button from '../button/Button';
+
 export default class Sidebar extends React.Component {
+    logout(e) {
+        console.log('logout')
+    }
+
     render(){
         return(
             <div className={`sidebar ${this.props.className}`} id="sidebar">
@@ -43,9 +50,9 @@ export default class Sidebar extends React.Component {
                     </ul>
                 </div>
                 <div className="logout-block">
-                    <button type="button" className="btn-logout">
-                        <img src="img/logout.svg" alt="logout"/>
-                    </button>
+                    <Button type="button" text='logout' className="btn-logout" onClick={this.logout} />
+                    {/*<ImgComponent src="img/logout.svg" alt="logout"/>
+                    </Button>*/}
                 </div>
             </div>
         )
