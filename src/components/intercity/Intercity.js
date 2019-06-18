@@ -57,7 +57,7 @@ export default class Intercity extends React.Component {
                         text="Куда"
                     />
                 </div>
-                <AboutWay />
+                <AboutWay />{/* если выбран город во втором селекте, брать данные из redux в компонент, делать запрос и перерисовать */}
                 <FormOrder />{/*если true рисовать FormOrder*/}
             </div>
         )
