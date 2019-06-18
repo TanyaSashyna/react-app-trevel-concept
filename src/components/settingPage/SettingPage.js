@@ -6,6 +6,37 @@ import Input from '../input/Input';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Button from '../button/Button';
 
+const dataFormSettings = [
+    {
+        labelPlaceholder: 'Имя',
+        type: 'text',
+        name: 'firstName',
+        errorText: 'Введите имя',
+        id: 1
+    },
+    {
+        labelPlaceholder: 'Фамилия',
+        type: 'text',
+        name: 'lastName',
+        errorText: 'Введите фамилию',
+        id: 2
+    },
+    {
+        labelPlaceholder: 'Телефон',
+        type: 'phone',
+        name: 'phone',
+        errorText: 'Введите номер телефона',
+        id: 3
+    },
+    {
+        labelPlaceholder: 'Город',
+        type: 'text',
+        name: 'city',
+        errorText: 'Введите город',
+        id: 4
+    }
+]
+
 export default class SettingPage extends React.Component {
     onChangeValue(e) {
         console.log(e.target.value)
