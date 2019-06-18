@@ -56,7 +56,7 @@ export default class Intercity extends React.Component {
                     />
                 </div>
                 <AboutWay />
-                <FormOrder />
+                <FormOrder />{/*если true рисовать FormOrder*/}
             </div>
         )
     }
