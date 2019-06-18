@@ -61,6 +61,18 @@ export default class FormOrder extends React.Component {
         return (
             <>
                 <form>
+                    dataForm.map(el => 
+                        <div className="form-group" key={el.id}>
+                                 {el.labelText && <label>{labelText}</label>}
+                                 <Input 
+                                     type={el.type} 
+                                     name={el.name} 
+                                     placeholder={el.placeholder} 
+                                     onChange={this.onChangeValue}
+                                 />
+                                 <ErrorMessage text={el.errorText} />
+                        </div>
+                    )
                     <div className="form-group">
                         <Input type="text" name="firstName" placeholder="Имя" onChange={this.onChangeValue}/>
                         <ErrorMessage text='Введите имя'/>
