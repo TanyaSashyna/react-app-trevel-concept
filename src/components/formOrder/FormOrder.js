@@ -104,7 +104,7 @@ export default class FormOrder extends React.Component {
                         />
                     </div>
                 </form>
-                <ModalForm />
+                <ModalForm /> {/*показывать после отправки и удалять через время*/}
             </>
         )
     }
