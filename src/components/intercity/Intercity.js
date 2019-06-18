@@ -21,6 +21,8 @@ export default class Intercity extends React.Component {
     }
 
     handleSelectChange(event) {
+        {/* сделать это через redux */}
+        
         //console.log(this.state.fromWhere[event.target.value], this.state.showSelect);
 
         event.target.name === "from-where" ?
@@ -45,7 +47,7 @@ export default class Intercity extends React.Component {
                         fromWhere={this.state.fromWhere}
                         onChange={this.handleSelectChange.bind(this)}
                         text="Откуда"
-                    />
+                    />{/* при onChange менять обьект для второго селекта, отправлять в redux, затем передавать его второму селекту */}
                     <SelectsBlock
                         className={this.state.showSelect ? 'd-block' : 'd-none'}
                         name="where"
