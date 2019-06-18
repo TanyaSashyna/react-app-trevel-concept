@@ -55,6 +55,11 @@ export default class SettingPage extends React.Component {
                         <input type="file" name="avatar" id="avatarFile" className="input-avatar"/>
                     </div>
                     <div className="info">
+                        dataFormSettings.map( el =>
+                            <label className="label-input">{el.labelPlaceholder}</label>
+                            <Input type={el.type} name={el.name} placeholder={el.labelPlaceholder} onChange={this.onChangeValue}/>
+                            <ErrorMessage text={el.errorText}/>
+                        )
                         <div className="form-group">
                             <label className="label-input">Имя:</label>
                             <Input type="text" name="firstName" placeholder="Имя" onChange={this.onChangeValue}/>
