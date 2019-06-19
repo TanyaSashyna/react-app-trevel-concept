@@ -21,7 +21,7 @@ export default class Intercity extends React.Component {
     }
 
     handleSelectChange(event) {
-        {/* сделать это через redux */}
+        //сделать это через redux
         
         //console.log(this.state.fromWhere[event.target.value], this.state.showSelect);
 

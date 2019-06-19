@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import "./sidebar.scss";
 
-//import ImgComponent from '../imgComponent/ImgComponent';
 import Button from '../button/Button';
 
-export default class Sidebar extends React.Component {
+export class Sidebar extends React.Component {
     logout(e) {
         console.log('logout')
     }
 
-    render(){
+    render() {
+        const { showSidebarItem } = this.props;
+
         return(
-            <div className={`sidebar ${this.props.className}`} id="sidebar">
+            <div className={`sidebar ${ showSidebarItem? 'open' : 'close' }`} id="sidebar">
                 <div className="user-info">
                     <div className="avatar"></div>
                     <p className="userName">User Name</p>
@@ -50,11 +52,19 @@ export default class Sidebar extends React.Component {
                     </ul>
                 </div>
                 <div className="logout-block">
-                    <Button type="button" text='logout' className="btn-logout" onClick={this.logout} />
-                    {/*<ImgComponent src="img/logout.svg" alt="logout"/>
-                    </Button>*/}
+                    <Button type="button" text='Выйти' className="btn-logout" onClick={this.logout} />
                 </div>
             </div>
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        showSidebarItem: state.burgerBtn.showSidebar
+    };
+};
+
+export default connect(
+    mapStateToProps
+)(Sidebar);

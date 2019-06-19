@@ -5,7 +5,8 @@ import { Provider } from "react-redux";
 
 import "./style.scss";
 
-import NavAll from './components/navAll/NavAll';
+import Sidebar from './components/sidebar/Sidebar';
+import Header from './components/header/Header';
 import App from './router';
 
 import * as serviceWorker from './serviceWorker';
@@ -15,7 +16,8 @@ import { store } from "./store";
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-            <NavAll />
+            <Header />
+            <Sidebar />
             <App />
         </BrowserRouter>
     </Provider>,

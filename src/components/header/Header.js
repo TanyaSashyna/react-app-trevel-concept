@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+
+import { showSidebar } from "../../actions/burger-btn";
 
 import "./header.scss";
 
@@ -12,13 +15,14 @@ const menuSm = [
     { id: 2, path: "/settings", className: "settings icon", src: "img/settings.svg", alt: "settings"}
 ];
 
-export default class Header extends React.Component {
+export class Header extends React.Component {
     showSidebar(e){
         this.setState({showSidebar: !this.state.showSidebar})
     }
 
     render(){
-        //console.log(this.props);
+        const { showSidebar } = this.props;
+        
         return(
             <>
                 <header>
@@ -27,7 +31,7 @@ export default class Header extends React.Component {
                             type="button"
                             className='burger menu-off'
                             id='burger'
-                            onClick={this.props.onClick}
+                            onClick={showSidebar}
                             classNameIcon='menu-icon'/>
 
                         <Link to="/" className="logo">
@@ -52,3 +56,14 @@ export default class Header extends React.Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        showSidebarItem: state.burgerBtn.showSidebar
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    { showSidebar }
+)(Header);

@@ -13,6 +13,7 @@ const dataForm = [
         name: 'firstName',
         placeholder: 'Имя',
         errorText: 'Введите имя',
+        labelText: 'Имя',
         id: 1
     },
      {
@@ -20,6 +21,7 @@ const dataForm = [
         name: 'lastName',
         placeholder: 'Фамилия',
         errorText: 'Введите имя',
+        labelText: 'Фамилия',
         id: 2
     },
     {
@@ -27,6 +29,7 @@ const dataForm = [
         name: 'phone',
         placeholder: 'Телефон',
         errorText: 'Введите номер телефона',
+        labelText: 'Телефон',
         id: 3
     },
     {
@@ -35,6 +38,7 @@ const dataForm = [
         placeholder: 'Дата отправления',
         errorText: 'Введите дату',
         className: 'date',
+        labelText: 'Дата',
         id: 4
     },
     {
@@ -42,7 +46,7 @@ const dataForm = [
         name: 'number',
         placeholder: '0',
         errorText: 'Не корректное количество мест',
-        labelText: 'Количество мест:',
+        labelText: 'Количество мест',
         id: 5
     }
 ]
@@ -61,39 +65,18 @@ export default class FormOrder extends React.Component {
         return (
             <>
                 <form>
-                    dataForm.map(el => 
+                    {dataForm.map(el => 
                         <div className="form-group" key={el.id}>
-                                 {el.labelText && <label>{labelText}</label>}
-                                 <Input 
-                                     type={el.type} 
-                                     name={el.name} 
-                                     placeholder={el.placeholder} 
-                                     onChange={this.onChangeValue}
-                                 />
-                                 <ErrorMessage text={el.errorText} />
+                            <label className="label-input">{el.labelText}</label>
+                            <Input
+                                type={el.type}
+                                name={el.name}
+                                placeholder={el.placeholder}
+                                onChange={this.onChangeValue}
+                            />
+                            <ErrorMessage text={el.errorText} />
                         </div>
-                    )
-                    <div className="form-group">
-                        <Input type="text" name="firstName" placeholder="Имя" onChange={this.onChangeValue}/>
-                        <ErrorMessage text='Введите имя'/>
-                    </div>
-                    <div className="form-group">
-                        <Input type="text" name="lastName" placeholder="Фамилия" onChange={this.onChangeValue}/>
-                        <ErrorMessage text='Введите Фамилию' />
-                    </div>
-                    <div className="form-group">
-                        <Input type="phone" name="phone" placeholder="Телефон" onChange={this.onChangeValue}/>
-                        <ErrorMessage text='Введите номер телефона' />
-                    </div>
-                    <div className="form-group">
-                        <Input type='date' className="date" name="date" placeholder="Дата отправления" onChange={this.onChangeValue}/>
-                        <ErrorMessage text='Введите дату' />
-                    </div>
-                    <div className="form-group col-sm">
-                        <label>Количество мест:</label>
-                        <Input type="text" name="number" placeholder="0" onChange={this.onChangeValue}/>
-                        <ErrorMessage text='Не корректное количество мест' />
-                    </div>
+                    )}
                     <div className="btn-block">
                         <Button
                             text="Заказать билет"
@@ -104,7 +87,7 @@ export default class FormOrder extends React.Component {
                         />
                     </div>
                 </form>
-                <ModalForm /> {/*показывать после отправки и удалять через время*/}
+                <ModalForm />{/*показывать после отправки и удалять через время*/}
             </>
         )
     }

@@ -55,31 +55,13 @@ export default class SettingPage extends React.Component {
                         <input type="file" name="avatar" id="avatarFile" className="input-avatar"/>
                     </div>
                     <div className="info">
-                        dataFormSettings.map( el =>
-                            <label className="label-input">{el.labelPlaceholder}</label>
-                            <Input type={el.type} name={el.name} placeholder={el.labelPlaceholder} onChange={this.onChangeValue}/>
-                            <ErrorMessage text={el.errorText}/>
-                        )
-                        <div className="form-group">
-                            <label className="label-input">Имя:</label>
-                            <Input type="text" name="firstName" placeholder="Имя" onChange={this.onChangeValue}/>
-                            <ErrorMessage text='Введите имя'/>
-                        </div>
-                        <div className="form-group">
-                            <label className="label-input">Фамилия:</label>
-                            <Input type="text" name="lastName" placeholder="Фамилия" onChange={this.onChangeValue}/>
-                            <ErrorMessage text='Введите Фамилию' />
-                        </div>
-                        <div className="form-group">
-                            <label className="label-input">Телефона:</label>
-                            <Input type="phone" name="phone" placeholder="Телефон" onChange={this.onChangeValue}/>
-                            <ErrorMessage text='Введите номер телефона' />
-                        </div>
-                        <div className="form-group">
-                            <label className="label-input">Город:</label>
-                            <Input type="text" name="city" placeholder="Город" onChange={this.onChangeValue}/>
-                            <ErrorMessage text='Введите город' />
-                        </div>
+                        {dataFormSettings.map(el =>
+                            <div className="form-group" key={el.id}>
+                                <label className="label-input">{el.labelPlaceholder}</label>
+                                <Input type={el.type} name={el.name} placeholder={el.labelPlaceholder} onChange={this.onChangeValue} />
+                                <ErrorMessage text={el.errorText} />
+                            </div>
+                        )}
                         <div className="btn-block">
                             <Button
                                 text="Сохранить"

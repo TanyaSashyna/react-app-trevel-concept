@@ -15,7 +15,6 @@
     background: #3ab1bf;
     border-right: 1px solid #25818c;
     box-shadow: 0 0 5px rgb(51, 125, 133);
-    //transform: translate(-100%);
     transition: transform 0.35s ease;
 
     @media (max-width: 575px) {
@@ -117,7 +116,7 @@
         border-top: 1px solid #25818c;
 
         .btn-logout {
-            width: 30px;
+            color: $color-white;
             cursor: pointer;
         }
     }
