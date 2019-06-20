@@ -28,3 +28,16 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+/* https://panch.com.ua
+хедер и футер
+
+страницы: 
+    1.главная:
+        - большая картинка с инфой
+        - РЕГУЛЯРНЫЕ МАРШРУТЫ - ввиде картинок,без переходов
+    2. О нас
+    3. Контакты
+    4. Пассажирские перевозки
+*/
